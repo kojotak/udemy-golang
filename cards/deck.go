@@ -19,7 +19,7 @@ func newDeck() deck {
 
 	for _, suit := range suits {
 		for _, value := range values {
-			cards = append(cards, suit+" "+value)
+			cards = append(cards, suit+""+value)
 		}
 	}
 
@@ -27,6 +27,8 @@ func newDeck() deck {
 }
 
 //rozdeli balicek na dve casti - opet typu deck
+//neni tu receiver, ale deck je parametr, aby bylo jasne, ze funkce deal nemodifikuje balicek,
+//   ale vraci ruku a zbytek
 func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
 }

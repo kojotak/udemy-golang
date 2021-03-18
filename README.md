@@ -2,7 +2,7 @@
 
 git repo for udemy's golang course
 
-## section 2
+## section 3 
 
 ### build + spusteni
 
@@ -58,3 +58,9 @@ x: znamena vrat od x do konce
 
 castovani pomoci zavorek, napriklad string na byte slice:  []byte("retezec")
 (ulozeni dat na disk - nejdriv prevest na string, pak na byte slice)
+
+### testovani
+
+nazev testovaciho souboru musi koncit _test.go
+testy se spousti prikazem: go test
+nezobrazuje se pocet uspesnych testu, jen chyby
