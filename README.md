@@ -46,4 +46,15 @@ deklaruje se jako:
 
 func (t typ) funkce() { ... }
 
+### slice range
 
+[0:2]
+
+od 0 vcetne (coz je prvni prvek), do 2 exkluzivne, tj. vrati 2 kusy
+x: znamena vrat od x do konce
+:x znamena vrat od nuly do x
+
+### zmena typu
+
+castovani pomoci zavorek, napriklad string na byte slice:  []byte("retezec")
+(ulozeni dat na disk - nejdriv prevest na string, pak na byte slice)
