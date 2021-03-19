@@ -65,3 +65,27 @@ func (t typ) funkce() { ... }
 * nazev testovaciho souboru musi koncit _test.go
 * testy se spousti prikazem: go test
 * nezobrazuje se pocet uspesnych testu, jen chyby
+
+### struktury
+
+* = objekty bez metod
+* pri deklaraci jen popis casti - kazdy na novy radek
+* pri inicializaci jen slozene zavorky a carkou oddeleny seznam casti
+* to muze byt ale matouci, nebot zavisime na poradi. Lepsi je seznam dvojic - nazev:hodnota
+* pri deklaraci bez inicializace (var nazev typ) se priradi automaticky "zero value" (namisto null)
+* pokud inicializuji struct pomoci {}, musim dat oddelovac , i za posledni polozku
+* pokud deklaruji struct uvnitr struct, nemusim uvadet nazev promenne, vytvori se automaticky podle typu structory
+* pokud ve funkci zmenim hodnotu struct, tak se to zvenku neprojevi, a je potreba pouzit...
+
+### ukazatele
+
+* go je "pass by value" - pri volani funkce se zkopiruji a predaji zkopirovana data, nikoliv ukazatel
+* operator &promenna - vrati adresu, kam nazev promenne ukazuje
+* operator *ukazatel - vrati hodnotu, na kterou ukazatel ukazuje
+* pozor, pri deklaraci funkce s receiverem zapis (pointer *typ) rika, ze promenna pointer je typu "ukazatel na typ"
+* ale v tele funkce s receiverem zapis *pointer znamena "hodnota, kam ukazuje promenna pointer"
+* zkratka - go si umi ukazatel domyslet, takze neni potreba vzdycky nejprve vyrabet ukazatel pomoc &
+* co kdyz misto struct predam slice? NEpouzije se "pass by value"
+* value types: primitivni typy + stringy + struct
+* reference type: slice + kolekce + channels + pointers + functions
+* (u referencenich typu nemusime ukazatele vubec resit, tj. jsou potreba jen u struktur)
