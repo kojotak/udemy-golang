@@ -2,7 +2,7 @@
 
 git repo for udemy's golang course
 
-## section 3 
+## poznamky z kurzu
 
 ### build + spusteni
 
@@ -89,3 +89,11 @@ func (t typ) funkce() { ... }
 * value types: primitivni typy + stringy + struct
 * reference type: slice + kolekce + channels + pointers + functions
 * (u referencenich typu nemusime ukazatele vubec resit, tj. jsou potreba jen u struktur)
+
+### mapy
+
+* klice i hodnoty jsou staticky typovane
+* syntax: map[typKlice]typHodnoty
+* alternativni vytvoreni prazdne mapy: make(map[int]string)
+* mazani: delete(mapa, klic)
+* oproti strukture je referencni typ, musi mit stejne typy klicu a hodnot, muze se iterovat pres klice, ktere jsou dynamicke (mohou se pridavat/odebirat)
