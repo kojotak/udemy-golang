@@ -97,3 +97,11 @@ func (t typ) funkce() { ... }
 * alternativni vytvoreni prazdne mapy: make(map[int]string)
 * mazani: delete(mapa, klic)
 * oproti strukture je referencni typ, musi mit stejne typy klicu a hodnot, muze se iterovat pres klice, ktere jsou dynamicke (mohou se pridavat/odebirat)
+
+### interfaces
+
+* trosku jiny vyznam nez v OOP: pokud dana struktura obsahuje vsechny deklarovane funkce, potom rikame, ze je i daneho typu (rozhrani). Rikame tedy, ze rozhrani je "implicitni" (oproti napr. jave, kde se musi explicitne uvest implements)
+* tj. vlastni typy nerikaji, ze maji nejaky vztah k rozhrani - to vyplyva z toho, jestli obsahuji dane funkce
+* interface je tedy definovan mnozinou funkci
+* i kdyz je interface type, nelze z nej ale vytvorit value (instanci)
+* nemohou byt genercike. Go vlastne generiky vubec nema
