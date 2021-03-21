@@ -105,3 +105,23 @@ func (t typ) funkce() { ... }
 * interface je tedy definovan mnozinou funkci
 * i kdyz je interface type, nelze z nej ale vytvorit value (instanci)
 * nemohou byt genercike. Go vlastne generiky vubec nema
+
+### routines 
+
+* routine - v cem bezi program, neco jako vlakno
+* kazdy program bezi minimalne v jedne routine s nazvem main
+* kdyz chci pustit neco v nove rutine, pridam pred volanim funkce: go
+* po zavolani go pokracuje puvodni routine dal
+* takove routine se rika "child"
+* go scheduler planuje go routiny i na jednom jadru procesoru, ale defaultne 1 routina na 1 jadro
+* concurrency - bezi nekolik routine najednou na jednom jadru procesoru
+* paralellismus - bezi nekolik routine najednou na vice jadrech procesoru
+* ! problem - co kdyz main routine dobehne driv, nez children routines?
+
+### channels
+
+* channel - umoznuje komunikovat mezi routinama. Jde o jediny zpusob komunikace mezi routinama
+* channel ma typ, ktery omezuje, co si routiny mezi sebou vymenuji
+* posilani a prijimani zprav pres channel - operator <- (sipka)
+* tj. poslani: channel <- hodnota //posle hodnotu do channelu
+* a prijeti: promenna <- channel //ceka na zpravu z channelu - blokujici operace!
